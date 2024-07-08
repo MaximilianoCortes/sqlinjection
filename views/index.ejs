@@ -10,6 +10,10 @@
     <div class="container">
         <h1>Demostracion SQL Injection</h1>
         
+        <% if (message) { %>
+            <div class="message"><%= message %></div>
+        <% } %>
+        
         <div style="display: flex; justify-content: space-between;">
             <div style="flex: 1; margin-right: 20px;">
                 <h2>Inicio de sesion</h2>
@@ -40,7 +44,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Username</th>
+                            <th>Usuario</th>
                             <th>Email</th>
                             <th>Admin</th>
                         </tr>
@@ -58,6 +62,25 @@
                 </table>
             </div>
         </div>
+        
+        <div id="logs" class="logs">
+            <h2>Logs</h2>
+            <ul>
+                <% logs.forEach(log => { %>
+                    <li class="<%= log.type %>"><%= log.message %></li>
+                <% }) %>
+            </ul>
+        </div>
     </div>
+    <script>
+        // Desplazar el contenedor de logs hacia abajo
+        function scrollToBottom() {
+            var logsContainer = document.getElementById('logs');
+            logsContainer.scrollTop = logsContainer.scrollHeight;
+        }
+
+        // Llamar a la función al cargar la página
+        window.onload = scrollToBottom;
+    </script>
 </body>
 </html>

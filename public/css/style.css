@@ -80,3 +80,40 @@ th {
     overflow-wrap: break-word; /* Romper palabras largas */
     display: block; /* Asegura que se muestre como bloque */
 }
+
+.message {
+    background-color: #ffffcc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ffcc00;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.logs {
+    margin-top: 20px;
+    max-height: 150px; /* Ajusta la altura máxima del contenedor de logs */
+    overflow-y: auto; /* Habilita la barra de desplazamiento vertical */
+}
+
+.logs ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.logs li {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logs li.query {
+    background-color: #e6f7ff;
+}
+
+.logs li.error {
+    background-color: #ffcccc;
+}
+
+.logs li.info {
+    background-color: #ccffcc;
+}
